@@ -11,8 +11,8 @@ class PlateauTest {
     @Test
     void shouldReturnFinalRoverPosition() {
         Plateau plateau = new Plateau(5, 5);
-        Rover rover1 = new Rover(new Position(1, 2, Direction.N));
-        Rover rover2 = new Rover(new Position(3, 3, Direction.E));
+        Rover rover1 = new Rover(new Position(1, 2, Direction.NORTH));
+        Rover rover2 = new Rover(new Position(3, 3, Direction.EAST));
 
         rover1.addMove(Rover.Move.L).addMove(Rover.Move.M).addMove(Rover.Move.L).addMove(Rover.Move.M)
                 .addMove(Rover.Move.L).addMove(Rover.Move.M).addMove(Rover.Move.L).addMove(Rover.Move.M)
@@ -28,8 +28,8 @@ class PlateauTest {
         Map<Rover, Position> actual = plateau.getRoverPositions();
 
         Map<Rover, Position> expected = new HashMap<>();
-        expected.put(rover1, new Position(1, 3, Direction.N));
-        expected.put(rover2, new Position(5, 1, Direction.E));
+        expected.put(rover1, new Position(1, 3, Direction.NORTH));
+        expected.put(rover2, new Position(5, 1, Direction.EAST));
 
         assertEquals(expected, actual);
     }

@@ -1,6 +1,9 @@
 package com.step.mars_rover;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 class Plateau {
     private final int x;
@@ -19,11 +22,8 @@ class Plateau {
 
     Map<Rover, Position> getRoverPositions() {
         Map<Rover, Position> finalPositions = new HashMap<>();
-        this.rovers.forEach(rover -> finalPositions.put(rover, this.getFinalRoverPosition(rover)));
+        this.rovers.forEach(rover -> finalPositions.put(rover, rover.getFinalPosition()));
         return finalPositions;
     }
 
-    private Position getFinalRoverPosition(Rover rover) {
-        return rover.getFinalPosition();
-    }
 }
