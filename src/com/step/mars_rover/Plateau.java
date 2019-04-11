@@ -22,7 +22,7 @@ class Plateau {
 
     Map<Rover, Position> getRoverPositions() {
         Map<Rover, Position> finalPositions = new HashMap<>();
-        this.rovers.forEach(rover -> finalPositions.put(rover, rover.getFinalPosition()));
+        this.rovers.forEach(rover -> finalPositions.put(rover, rover.getFinalPosition(this.x,this.y)));
         return finalPositions;
     }
 
